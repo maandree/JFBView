@@ -73,7 +73,7 @@ int Framebuffer::GetBufferSize() const {
 }
 
 PixelBuffer::Size Framebuffer::GetSize() const {
-  return PixelBuffer::Size(_vinfo.xres, _vinfo.yres);
+  return PixelBuffer::Size(_vinfo.xres + SHEAR_CORRECTION, _vinfo.yres + HEIGHT_CORRECTION);
 }
 
 void Framebuffer::Render(const PixelBuffer &src,
